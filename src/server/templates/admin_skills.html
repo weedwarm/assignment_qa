@@ -1,0 +1,24 @@
+{% for table_name, table_items in table_data_list.items() %}
+    <table border="1">
+        <tr>
+            {% for column in table_items[0] %}
+            <th>{{ column }}</th>
+            {% endfor %}
+            <th>Actions</th>
+        </tr>
+        {% for item in table_items[1] %}
+        <tr>
+              {% for value in range(item) %}
+       <td>{{ value }}</td>
+   {% endfor %}
+            <td>
+                <!-- Update button -->
+                <button onclick="location.href='{{ url_for('update', table_name=table_name, object_id=item[0]) }}'">Update</button>
+
+                <!-- Delete button -->
+                <button onclick="location.href='{{ url_for('delete', table_name=table_name, column_name='SkillID', object_id=item[0]) }}'">Delete</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endfor %}

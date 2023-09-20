@@ -1,0 +1,87 @@
+# Alexa Skills Management Application
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Requirements](#requirements)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Application Structure](#application-structure)
+7. [Database](#database)
+8. [Routes](#routes)
+
+
+## Introduction
+
+This application is a Flask-based web application for managing Alexa skills. Users can register, login, and perform CRUD operations on various types of data like Alexa skills, categories, and users.
+
+## Description
+
+This web development project aims to simplify the management of Alexa skills by providing an intuitive interface and robust back-end services. Built on the Flask framework and SQLite3 database, this application emphasizes user experience and scalable design.
+
+### Artifacts
+
+- **Frontend**: Utilizes HTML, CSS, and JavaScript to build user-friendly interfaces.
+- **Backend**: Written in Python, leveraging the Flask web framework for routing and server logic.
+- **Database**: SQLite3 database to store user information, skill data, and categories.
+- **Authentication**: Implements secure JWT-based user authentication.
+- **API**: RESTful API services for handling CRUD operations on Alexa skills, categories, and users.
+
+## Features
+
+- User Authentication
+- User Authorization based on roles
+- CRUD operations on Alexa Skills
+- CRUD operations on Categories
+- CRUD operations on Users
+- Full unit test coverage
+
+## Requirements
+
+- Python 3.x
+- Flask
+- SQLite3
+
+## Installation
+
+
+1. Install the required packages
+
+pip install -r requirements.txt
+
+
+Run the application
+
+    python main.py
+
+## Usage
+
+Visit http://localhost:5000/ in your web browser and proceed to either log in or register a new account.
+Application Structure
+
+    main.py: Contains the Flask application and the route definitions.
+    User.py: Contains the user model.
+    html_generator.py: Generates HTML dynamically for some views.
+    utilities/DBAgent.py: Handles database interactions.
+
+## Database
+
+The application uses SQLite for data storage and contains the following tables:
+
+    Users
+    Skills
+    Categories
+
+## Routes
+
+    /: Home, redirects to login
+    /login: Login page
+    /register: User Registration page
+    /dashboard: Main Dashboard
+    /admin/skills: Admin view for managing skills
+    ... (many more)
+
+## Testing
+
+Unit test run successfully. Screenshots included in the /README directory.

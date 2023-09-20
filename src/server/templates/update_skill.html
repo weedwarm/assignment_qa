@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Skill</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+    <div class="container">
+    <h1>Update Skill</h1>
+    <form action="{{ url_for('update_skill', skill_id=skill_id) }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ skill.name }}"><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="{{ skill.description }}"><br>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" value="{{ skill.price }}"><br>
+
+        <label for="launch_date">Launch Date:</label>
+        <input type="text" id="launch_date" name="launch_date" value="{{ skill.launch_date }}"><br>
+
+        <label for="category_id">Category ID:</label>
+        <input type="text" id="category_id" name="category_id" value="{{ skill.category_id }}"><br>
+
+        <input type="submit" value="Update Skill">
+    </form>
+    <a href="{{ url_for('admin_skills') }}">Back to Skills List</a>
+    </div>
+</body>
+</html>

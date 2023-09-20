@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Skills</title>
+</head>
+<body>
+    <h1>All Skills</h1>
+    <h1>Welcome to the Dashboard</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <table border="1">
+        <tr>
+            <th>Skill ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Launch Date</th>
+            <th>Category ID</th>
+            <th>Actions</th>
+        </tr>
+        {% for skill in skills %}
+        <tr>
+            <td>{{ skill[0] }}</td>
+            <td>{{ skill[1] }}</td>
+            <td>{{ skill[2] }}</td>
+            <td>{{ skill[3] }}</td>
+            <td>{{ skill[4] }}</td>
+            <td>{{ skill[5] }}</td>
+            <td>
+                <!-- Update button -->
+                <button onclick="location.href='{{ url_for('update_skill', skill_id=skill[0]) }}'">Update</button>
+
+                <!-- Delete button -->
+                <button onclick="location.href='{{ url_for('delete', table_name='Skills', column_name='SkillID', object_id=skill[0]) }}'">Delete</button>            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('user_add_skill') }}">Add New Skill</a>
+</body>
+</html>

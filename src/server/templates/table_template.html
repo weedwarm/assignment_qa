@@ -1,0 +1,21 @@
+<table border="1">
+    <tr>
+        <!-- Adjust the headers based on the table -->
+        <th>ID</th>
+        <!-- Add other headers -->
+        <th>Actions</th>
+    </tr>
+    {% for record in records %}
+    <tr>
+        <td>{{ record[0] }}</td>
+        <!-- Add other columns -->
+        <td>
+            <!-- Update button -->
+            <button onclick="location.href='{{ url_for('update_record', table_name=table_name, column_name=column_name, object_id=record[0]) }}'">Update</button>
+
+            <!-- Delete button -->
+            <button onclick="location.href='{{ url_for('delete', table_name=table_name, column_name=column_name, object_id=record[0]) }}'">Delete</button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

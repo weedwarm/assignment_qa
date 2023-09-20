@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Skill</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+    <div class="container">
+    <h1>Add New Skill</h1>
+    <form action="/user/add_skill" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description"><br>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price"><br>
+
+        <label for="launch_date">Launch Date:</label>
+        <input type="text" id="launch_date" name="launch_date"><br>
+
+        <label for="category_id">Category ID:</label>
+        <input type="text" id="category_id" name="category_id"><br>
+
+        <input type="submit" value="Add Skill">
+    </form>
+    </div>
+</body>
+</html>
